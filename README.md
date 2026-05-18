@@ -1,39 +1,140 @@
 [![Mentioned in Awesome Foundry](https://awesome.re/mentioned-badge-flat.svg)](https://github.com/crisgarner/awesome-foundry)
-# Foundry + Hardhat Diamonds
 
-This is a mimimal template for [Diamonds](https://github.com/ethereum/EIPs/issues/2535) which allows facet selectors to be generated on the go in solidity tests!
+# Diamond-2535-Lossless-Auction
+
+A modular NFT auction marketplace built using the EIP-2535 Diamond Standard with Hardhat and Foundry.
+
+This project explores upgradeable smart contract architecture using Diamonds while implementing auction mechanics for NFTs in a scalable and maintainable way.
+
+One of the core ideas behind this project was understanding how complex Solidity systems can be broken into reusable facets while maintaining upgradeability and clean contract organization.
+
+---
+
+## Features
+
+* EIP-2535 Diamond architecture
+* Modular facet-based smart contracts
+* NFT auction functionality
+* Upgradeable and extensible system design
+* Hardhat + Foundry development workflow
+* Solidity custom errors for easier debugging
+
+---
+
+## Tech Stack
+
+* Solidity
+* Hardhat
+* Foundry
+* Ethers.js
+* OpenZeppelin Contracts
+
+---
+
+## Project Structure
+
+```bash id="af2j3"
+contracts/
+ ├── Diamond.sol
+ ├── facets/
+ ├── interfaces/
+ ├── libraries/
+ └── upgradeInitializers/
+
+scripts/
+test/
+```
+
+---
 
 ## Installation
 
-- Clone this repo
-- Install dependencies
+Clone the repository:
 
-```bash
-$ yarn && forge update
+```bash id="0u3dj"
+git clone https://github.com/IjayAbby/Diamond-2535-Lossless-Auction.git
 ```
 
-### Compile
+Install dependencies:
 
-```bash
-$ npx hardhat compile
+```bash id="b3j4q"
+yarn && forge update
 ```
+
+---
+
+## Compile Contracts
+
+```bash id="m8wq2"
+npx hardhat compile
+```
+
+---
+
+## Run Tests
+
+### Foundry
+
+```bash id="j7sn1"
+forge test
+```
+
+### Hardhat
+
+```bash id="w92la"
+npx hardhat test
+```
+
+---
 
 ## Deployment
 
 ### Hardhat
 
-```bash
-$ npx hardhat run scripts/deploy.js
+```bash id="r8m2p"
+npx hardhat run scripts/deploy.js
 ```
 
-### Foundry
+---
 
-```bash
-$ forge t
-```
+## Notes
 
-`Note`: A lot of improvements are still needed so contributions are welcome!!
+A lot of improvements are still being explored, especially around:
 
-Bonus: The [DiamondLoupefacet](contracts/facets/DiamondLoupeFacet.sol) uses an updated [LibDiamond](contracts/libraries//LibDiamond.sol) which utilises solidity custom errors to make debugging easier especially when upgrading diamonds. Take it for a spin!!
+* gas optimization
+* advanced auction logic
+* frontend integration
+* additional security testing
+* developer tooling improvements
 
-Need some more clarity? message me [on twitter](https://twitter.com/Timidan_x), Or join the [EIP-2535 Diamonds Discord server](https://discord.gg/kQewPw2)
+Contributions, ideas, and feedback are always welcome.
+
+---
+
+## Bonus
+
+The `DiamondLoupeFacet` uses an updated `LibDiamond` implementation that leverages Solidity custom errors to improve debugging and upgrade transparency when working with Diamonds.
+
+This project was also part of my deeper exploration into:
+
+* upgradeable protocol architecture
+* advanced Solidity patterns
+* smart contract modularity
+* developer tooling and testing workflows
+
+---
+
+## References
+
+* EIP-2535 Diamond Standard
+* Hardhat Documentation
+* Foundry Book
+
+---
+
+## Author
+
+Ijay Abby
+
+LinkedIn:
+[Profile](https://www.linkedin.com/in/ijayabby4)
